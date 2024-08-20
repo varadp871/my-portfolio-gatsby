@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Link } from 'gatsby'
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Resume', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'About', href: '#', current: false },
+  { name: 'Home', href: '/Home', current: true },
+  { name: 'Resume', href: '/Resume', current: false },
+  { name: 'Projects', href: '/Projects', current: false },
+  { name: 'About', href: '/About', current: false },
 ]
 
 function classNames(...classes) {
@@ -30,25 +31,24 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <img
-                alt="Your Company"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                alt="Varad Panke"
+                src="../images/VaradPanke_signature_orange.png"
                 className="h-8 w-auto"
               />
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
+                    to={item.href}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -6,5 +6,7 @@ module.exports = {
     title: `Portfolio_VP`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-postcss"]
+  plugins: ["gatsby-plugin-postcss",
+    'gatsby-plugin-apollo'
+  ]
 };
