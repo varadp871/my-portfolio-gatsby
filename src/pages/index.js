@@ -2,6 +2,7 @@ import * as React from "react"
 import Navbar from "./Navbar"
 import Home from "./Home"
 import '../styles/pageStyles.css'
+import '../styles/global.css'
 
 const IndexPage = () => {
   return (

@@ -1,0 +1,18 @@
+.contactForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    margin: 10px;
+    padding: 10px;
+}
+
+.contactText {
+    margin: 10px;
+    padding: 10px;
+    font-size: xx-large;
+    display: inline-flex;
+    border-left: 5px solid purple;
+}
