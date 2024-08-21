@@ -5,9 +5,9 @@ import { Link } from 'gatsby'
 
 const navigation = [
   { name: 'Home', href: '/Home', current: true },
-  { name: 'Resume', href: '/Resume', current: false },
-  { name: 'Projects', href: '/Projects', current: false },
   { name: 'About', href: '/About', current: false },
+  { name: 'Projects', href: '/Projects', current: false },
+  { name: 'Contact', href: '/Contact', current: false },
 ]
 
 function classNames(...classes) {
@@ -31,8 +31,9 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <img
-                alt="Varad Panke"
-                src="../images/VaradPanke_signature_orange.png"
+                alt="Varad Panke Logo"
+                src="https://s6.imgcdn.dev/eVbYM.png" 
+                border="0" 
                 className="h-8 w-auto"
               />
             </div>
