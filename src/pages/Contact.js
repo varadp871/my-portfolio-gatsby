@@ -11,11 +11,12 @@ const initialValues = {
 };
 
 function Contact() {
-  const {values, errors, handleBlur, handleSubmit, handleChange} = useFormik({
+  const {values, errors, handleBlur, touched, handleSubmit, handleChange} = useFormik({
     initialValues: initialValues,
     validationSchema: checkContactSchema,
-    onSubmit: (values) => {
+    onSubmit: (values, action) => {
       console.log("values :", values);
+      action.resetForm();
     },
   });
 
@@ -39,6 +40,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              { errors.name && touched.name ? <p className="formError"> { errors.name } </p> : null }
             </label>
             <label className="relative block label">
               <span className="sr-only">Email</span>
@@ -51,6 +53,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              { errors.email && touched.email ? <p className="formError"> { errors.email } </p> : null }
             </label>
             <label className="relative block label">
               <span className="sr-only">Subject</span>
@@ -63,6 +66,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              { errors.subject && touched.subject ? <p className="formError"> { errors.subject } </p> : null }
             </label>
             <label className="relative block label">
               <span className="sr-only">Query</span>
@@ -75,6 +79,7 @@ function Contact() {
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
+              { errors.query && touched.query ? <p className="formError"> { errors.query } </p> : null }
             </label>
             <button className="mr-4 py-2 px-4 rounded-full text-violet-700 border-0 block w-full text-sm font-semibold bg-violet-50 text-slate-500 hover:bg-violet-100">
               Reach Out!
