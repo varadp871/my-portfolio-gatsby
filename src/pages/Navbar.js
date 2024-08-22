@@ -1,22 +1,43 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'gatsby'
-
-const navigation = [
-  { name: 'Home', href: '/Home', current: true },
-  { name: 'About', href: '/About', current: false },
-  { name: 'Projects', href: '/Projects', current: false },
-  { name: 'Contact', href: '/Contact', current: false },
-]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
 export default function Navbar() {
+
+  const [navigation, setNavigation] = useState([
+    { name: 'Home', href: '/Home', current: true },
+    { name: 'About', href: '/About', current: false },
+    { name: 'Projects', href: '/Projects', current: false },
+    { name: 'Contact', href: '/Contact', current: false },
+  ]);
+
+const handleItemClick = (itemName) => {
+  console.log("Clicked")
+  setNavigation((prevNavigation)=> {
+    return prevNavigation.map((item) => {
+      if(item.name === itemName){
+        console.log(item.name, " ", itemName)
+        let finalNav = {...item, current :true}
+        console.log("Final nav array : ", finalNav)
+        return { ...item, current: true }
+      }else {
+        console.log(item.name, " ", itemName)
+        let finalNav = {...item, current:false}
+        console.log("Final nav array : ", finalNav)
+        return { ...item, current: false }
+      }
+    })
+  })
+}
+
+
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-blueviolet-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -39,12 +60,13 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {navigation.map((item) => (                 
                   <Link
                     key={item.name}
                     to={item.href}
+                    onClick={() => handleItemClick(item.name)}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      item.current ? 'bg-violet-900 text-white' : 'text-gray-300 hover:bg-violet-900 hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >

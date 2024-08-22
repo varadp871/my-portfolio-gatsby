@@ -1,18 +1,43 @@
+.darkBackground {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(49, 16, 76);
+}
 .contactForm {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
+form {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 25px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px;
+}
 .label {
     margin: 10px;
     padding: 10px;
 }
-
+#formBtn {
+    width: 100%;
+    height: 55px;
+    font-size: 16px;
+    font-weight: 500;
+}
 .contactText {
     margin: 10px;
     padding: 10px;
     font-size: xx-large;
     display: inline-flex;
-    border-left: 5px solid purple;
+    border-left: 5px solid rgb(165, 0, 165);
+    justify-content: center;
+    color: #fff;
+}
+
+.formError {
+    color: red
 }

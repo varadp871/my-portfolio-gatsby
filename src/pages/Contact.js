@@ -11,7 +11,7 @@ const initialValues = {
 };
 
 function Contact() {
-  const {values, errors, handleBlur, touched, handleSubmit, handleChange} = useFormik({
+  const {values, isSubmitting, errors, handleBlur, touched, handleSubmit, handleChange} = useFormik({
     initialValues: initialValues,
     validationSchema: checkContactSchema,
     onSubmit: (values, action) => {
@@ -22,9 +22,10 @@ function Contact() {
 
   return (
     <>
-      <div>
+      <div className="darkBackground">
         <Navbar />
-        <h1 className="text_color_light headingStyles contactText">
+        <div> 
+        <h1 className="headingStyles contactText">
           Contact Me!
         </h1>
         <div className="contactForm">
@@ -81,10 +82,12 @@ function Contact() {
               />
               { errors.query && touched.query ? <p className="formError"> { errors.query } </p> : null }
             </label>
-            <button className="mr-4 py-2 px-4 rounded-full text-violet-700 border-0 block w-full text-sm font-semibold bg-violet-50 text-slate-500 hover:bg-violet-100">
+            <button id="formBtn" className="mr-4 py-2 px-4 rounded-full text-violet-700 border-0 block w-full text-sm font-semibold bg-violet-50 text-slate-500 hover:bg-violet-100" disabled={isSubmitting}>
               Reach Out!
             </button>
           </form>
+             
+        </div>
         </div>
       </div>
     </>
