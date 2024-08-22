@@ -5,6 +5,12 @@
     min-height: 100vh;
     background: rgb(49, 16, 76);
 }
+.pageCenter {
+    display: block;
+    text-align: center;
+    
+}
+
 .contactForm {
     display: flex;
     align-items: center;
@@ -37,7 +43,13 @@ form {
     justify-content: center;
     color: #fff;
 }
+#query {
+    height: 100px;
+    resize: none;
+}
 
 .formError {
-    color: red
+    color: red;
+    text-align: left;
+    margin-top: 10px;
 }

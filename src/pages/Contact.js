@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
 import { useFormik } from "formik";
-import "../styles/myCss.css";
+import "../styles/ContactForm.css";
 import { checkContactSchema } from "../schemas";
 const initialValues = {
   name: "",
@@ -24,7 +24,7 @@ function Contact() {
     <>
       <div className="darkBackground">
         <Navbar />
-        <div> 
+        <div className="pageCenter"> 
         <h1 className="headingStyles contactText">
           Contact Me!
         </h1>
@@ -71,18 +71,19 @@ function Contact() {
             </label>
             <label className="relative block label">
               <span className="sr-only">Query</span>
-              <input
+              <textarea
                 className="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
                 placeholder="Query"
                 type="text"
                 name="query"
+                id="query"
                 value={values.query}
                 onChange={handleChange}
                 onBlur={handleBlur}
               />
               { errors.query && touched.query ? <p className="formError"> { errors.query } </p> : null }
             </label>
-            <button id="formBtn" className="mr-4 py-2 px-4 rounded-full text-violet-700 border-0 block w-full text-sm font-semibold bg-violet-50 text-slate-500 hover:bg-violet-100" disabled={isSubmitting}>
+            <button type="submit" id="formBtn" className="mr-4 py-2 px-4 rounded-full text-violet-700 border-0 block w-full text-sm font-semibold bg-violet-50 text-slate-500 hover:bg-violet-100" disabled={isSubmitting}>
               Reach Out!
             </button>
           </form>

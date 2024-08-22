@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Link } from 'gatsby'
@@ -17,18 +17,11 @@ export default function Navbar() {
   ]);
 
 const handleItemClick = (itemName) => {
-  console.log("Clicked")
   setNavigation((prevNavigation)=> {
     return prevNavigation.map((item) => {
       if(item.name === itemName){
-        console.log(item.name, " ", itemName)
-        let finalNav = {...item, current :true}
-        console.log("Final nav array : ", finalNav)
         return { ...item, current: true }
       }else {
-        console.log(item.name, " ", itemName)
-        let finalNav = {...item, current:false}
-        console.log("Final nav array : ", finalNav)
         return { ...item, current: false }
       }
     })
@@ -71,6 +64,7 @@ const handleItemClick = (itemName) => {
                     )}
                   >
                     {item.name}
+                    
                   </Link>
                 ))}
               </div>
@@ -79,25 +73,6 @@ const handleItemClick = (itemName) => {
           
         </div>
       </div>
-
-      <DisclosurePanel className="sm:hidden">
-        <div className="space-y-1 px-2 pb-3 pt-2">
-          {navigation.map((item) => (
-            <DisclosureButton
-              key={item.name}
-              as="a"
-              href={item.href}
-              aria-current={item.current ? 'page' : undefined}
-              className={classNames(
-                item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                'block rounded-md px-3 py-2 text-base font-medium',
-              )}
-            >
-              {item.name}
-            </DisclosureButton>
-          ))}
-        </div>
-      </DisclosurePanel>
     </Disclosure>
   )
 }

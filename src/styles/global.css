@@ -5,6 +5,13 @@
 /* * {
     background-color: #fffffff5;
 } */
+body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(49, 16, 76);
+}
 
 .bg_color_light {
     background-color: #fffffff5;
