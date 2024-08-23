@@ -10,18 +10,24 @@ function classNames(...classes) {
 export default function Navbar() {
 
   const [navigation, setNavigation] = useState([
-    { name: 'Home', href: '/Home', current: true },
+    { name: 'Home', href: '/Home', current: false },
     { name: 'About', href: '/About', current: false },
     { name: 'Projects', href: '/Projects', current: false },
     { name: 'Contact', href: '/Contact', current: false },
   ]);
 
+  useEffect(()=> {
+    console.log(navigation)
+  }, navigation)
+
 const handleItemClick = (itemName) => {
   setNavigation((prevNavigation)=> {
     return prevNavigation.map((item) => {
       if(item.name === itemName){
+        
         return { ...item, current: true }
       }else {
+        
         return { ...item, current: false }
       }
     })
@@ -53,19 +59,20 @@ const handleItemClick = (itemName) => {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (                 
+                {navigation.map((item) => (                     
                   <Link
+                    onClick={() => handleItemClick(item.name)}     
                     key={item.name}
                     to={item.href}
-                    onClick={() => handleItemClick(item.name)}
                     className={classNames(
                       item.current ? 'bg-violet-900 text-white' : 'text-gray-300 hover:bg-violet-900 hover:text-white',
                       'rounded-md px-3 py-2 text-sm font-medium',
                     )}
                   >
-                    {item.name}
-                    
+                    {item.name}      
                   </Link>
+                 
+                  
                 ))}
               </div>
             </div>

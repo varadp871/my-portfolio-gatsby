@@ -3,6 +3,8 @@ import Navbar from "./Navbar";
 import { useFormik } from "formik";
 import "../styles/ContactForm.css";
 import { checkContactSchema } from "../schemas";
+import Modal from "./Modal";
+
 const initialValues = {
   name: "",
   email: "",
@@ -87,7 +89,13 @@ function Contact() {
               Reach Out!
             </button>
           </form>
+             <div className="ImageOnRight">
              
+             <object data="..\images\undraw_social_friends_re_7uaa.svg" type="image/svg+xml"></object>
+             </div>
+        </div>
+        <div>
+          <Modal />
         </div>
         </div>
       </div>

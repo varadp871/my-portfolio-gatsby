@@ -10,7 +10,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgb(49, 16, 76);
+    /* background: rgb(49, 16, 76); */
+    background: rgb(47,10,88);
+    background: linear-gradient(90deg, rgba(47,10,88,1) 0%, rgba(100,11,162,1) 50%, rgba(101,13,122,1) 100%);
 }
 
 .bg_color_light {
