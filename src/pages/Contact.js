@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 import { useFormik } from "formik";
 import "../styles/ContactForm.css";
@@ -12,7 +12,7 @@ const initialValues = {
   query: "",
 };
 
-function Contact() {
+function Contact(props) {
   const {values, isSubmitting, errors, handleBlur, touched, handleSubmit, handleChange} = useFormik({
     initialValues: initialValues,
     validationSchema: checkContactSchema,
@@ -21,6 +21,14 @@ function Contact() {
       action.resetForm();
     },
   });
+
+  const [show, setShow] = useState(false);
+
+const handleModal = () => {
+  console.log("Inside Handle Modal")
+  setShow(true);
+  console.log("Set show set to true")
+}
 
   return (
     <>
@@ -89,13 +97,13 @@ function Contact() {
               Reach Out!
             </button>
           </form>
+          {/* <div>
+          {show ? <Modal handleOpen={props.handleOpen} /> : null}
+          </div> */}
              <div className="ImageOnRight">
              
              <object data="..\images\undraw_social_friends_re_7uaa.svg" type="image/svg+xml"></object>
              </div>
-        </div>
-        <div>
-          <Modal />
         </div>
         </div>
       </div>

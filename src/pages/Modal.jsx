@@ -5,7 +5,6 @@ import { Modal as BaseModal } from '@mui/base/Modal';
 import Fade from '@mui/material/Fade';
 import { Button } from '@mui/base/Button';
 import Alert from '@mui/material/Alert';
-import CheckIcon from '@mui/icons-material/Check';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 export default function TransitionsModal() {
@@ -26,8 +25,8 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <ModalContent sx={style}>
-            <h2 id="transition-modal-title" className="modal-title">
-              Text in a child modal
+            <h2 id="transition-modal-title" className="modal-title text_color_light">
+              Thank You!
             </h2>
             <p id="transition-modal-description" className="modal-description">
             
