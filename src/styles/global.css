@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-    background-color: #fffffff5;
-} */
+* {
+    font-family: 'Montserrat';
+}
 body {
     display: block;
     justify-content: center;

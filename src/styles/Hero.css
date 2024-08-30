@@ -1,0 +1,19 @@
+* {
+    font-family: 'Montserrat';
+}
+
+.hero_img {
+    height: 80vh;
+    width: 80vh;
+
+}
+
+.hero_class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color: rgb(228, 208, 228);
+}

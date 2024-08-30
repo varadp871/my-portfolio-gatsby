@@ -12,7 +12,6 @@ const IndexPage = () => {
       <div>
         <main className="pageStyles">
           <Home />
-          <h1 className="text_color_light headingStyles">Welcome to my page</h1>
         </main>
       </div>
  
