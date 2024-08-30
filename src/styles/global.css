@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    font-family: 'Montserrat';
-}
+body {
+    font-family: "Montserrat", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
 body {
     display: block;
     justify-content: center;

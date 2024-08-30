@@ -1,6 +1,9 @@
-* {
-    font-family: 'Montserrat';
-}
+body {
+    font-family: "Montserrat", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
 
 .hero_img {
     height: 80vh;
