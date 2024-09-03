@@ -17,6 +17,7 @@ body {
     align-items: center;
 }
 
-p {
+.hero {
     color: rgb(228, 208, 228);
+    font-size: 1.5vw;
 }
