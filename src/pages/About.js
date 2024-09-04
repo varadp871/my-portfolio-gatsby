@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
+import '../styles/About.css';
 
 function About() {
   return (
     <>
       <Navbar />
-      <h1 className="text_color_light headingStyles">Welcome to About!</h1>
+      <div className="about-section">
+      <p><h1>About me</h1></p>
+      </div>
     </>
   );
 }

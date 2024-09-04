@@ -1,0 +1,7 @@
+.about-section{
+    color: rgb(228, 208, 228);
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
