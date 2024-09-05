@@ -17,10 +17,10 @@
     justify-content: center;
 }
 form {
-    max-width: 600px;
+    max-width: 60%;
     width: 100%;
     background: #fff;
-    padding: 25px 25px 40px;
+    padding: 2.5em 2.5em 4em;
     border-radius: 8px;
     box-shadow: 0 0 10px;
 }
